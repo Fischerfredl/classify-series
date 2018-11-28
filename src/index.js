@@ -39,7 +39,7 @@ export const getBoundsIndex = (bounds, val) => {
   }
   return -1
 }
-  
+
 export const classify = (serie, nbClass, algorithm) => {
   switch (algorithm) {
     case 'eqInterval':
