@@ -1,6 +1,12 @@
+/**
+ * Classify the series in equal intervals from minimum to maximum value.
+ * @param {array} serie
+ * @param {number} nbClass
+ * @param {number} forceMin
+ * @param {number} forceMax
+ */
 export const classifyEqInterval = (serie, nbClass, forceMin, forceMax) => {
   if (serie.length === 0) {
-    console.warn('serie must not be empty')
     return []
   }
 

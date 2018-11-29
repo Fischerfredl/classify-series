@@ -1,6 +1,5 @@
 export const classifyJenks = (serie, nbClass) => {
   if (serie.length === 0) {
-    console.warn('serie must not be empty')
     return []
   }
 

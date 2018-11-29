@@ -17,7 +17,7 @@ const stddev = (serie) => {
 
 export const classifyStdDeviation = (serie, nbClass) => {
   if (serie.length === 0) {
-    throw Error('Series must not be empty.')
+    return []
   }
 
   let bounds = []
