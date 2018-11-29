@@ -20,6 +20,9 @@ export const classifyStdDeviation = (serie, nbClass) => {
     return []
   }
 
+  let _mean = mean(serie)
+  let _stddev = stddev(serie)
+
   let bounds = []
 
   // number of classes is odd
@@ -28,32 +31,32 @@ export const classifyStdDeviation = (serie, nbClass) => {
     let infBound = Math.floor(nbClass / 2)
     let supBound = infBound + 1
     // we set the central bounds
-    bounds[infBound] = mean(serie) - (stddev(serie) / 2)
-    bounds[supBound] = mean(serie) + (stddev(serie) / 2)
+    bounds[infBound] = _mean - (_stddev / 2)
+    bounds[supBound] = _mean + (_stddev / 2)
     // Values < to infBound, except first one
     for (let i = infBound - 1; i > 0; i--) {
-      var val = bounds[i + 1] - stddev(serie)
+      let val = bounds[i + 1] - _stddev
       bounds[i] = val
     }
     // Values > to supBound, except last one
     for (let i = supBound + 1; i < nbClass; i++) {
-      let val = bounds[i - 1] + stddev(serie)
+      let val = bounds[i - 1] + _stddev
       bounds[i] = val
     }
 
     // number of classes is even
   } else {
-    var meanBound = nbClass / 2
+    let meanBound = nbClass / 2
     // we get the mean value
-    bounds[meanBound] = mean(serie)
+    bounds[meanBound] = _mean
     // Values < to the mean, except first one
     for (let i = meanBound - 1; i > 0; i--) {
-      let val = bounds[i + 1] - stddev(serie)
+      let val = bounds[i + 1] - _stddev
       bounds[i] = val
     }
     // Values > to the mean, except last one
     for (let i = meanBound + 1; i < nbClass; i++) {
-      let val = bounds[i - 1] + stddev(serie)
+      let val = bounds[i - 1] + _stddev
       bounds[i] = val
     }
   }
