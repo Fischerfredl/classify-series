@@ -2,11 +2,11 @@
   "name": "classify-series",
   "version": "0.1.0",
   "description": "Classification algorithms for number-arrays.",
-  "main": "classify-series.min.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "BABEL_ENV=test mocha --require @babel/register --require @babel/core",
     "lint": "eslint src",
-    "minify": "babel src -o classify-series.min.js"
+    "build": "babel src -o dist/classify-series.min.js"
   },
   "repository": {
     "type": "git",

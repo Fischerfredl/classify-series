@@ -4,5 +4,5 @@
             "presets": ["@babel/preset-env"]
         }
     },
-    "presets": ["minify"]
+    "presets": ["@babel/preset-env", "minify"]   
 }
