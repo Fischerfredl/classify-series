@@ -1,8 +1,22 @@
 # classify-series
 
+[![npm](https://img.shields.io/npm/v/classify-series.svg)](https://www.npmjs.com/package/classify-series)
+![NpmLicense](https://img.shields.io/npm/l/classify-series.svg)
+[![npm bundle size (minified)](https://img.shields.io/bundlephobia/min/classify-series.svg)](https://bundlephobia.com/result?p=classify-series@latest)
+[![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/classify-series.svg)](https://bundlephobia.com/result?p=classify-series@latest)
+![David](https://img.shields.io/david/Fischerfredl/classify-series.svg)
+![David](https://img.shields.io/david/dev/Fischerfredl/classify-series.svg)
+
+
 Classification algorithms for number-arrays.
 
-# Description
+- [classify-series](#classify-series)
+    - [Description](#description)
+    - [docs](#docs)
+    - [Inspiration](#inspiration)
+    - [Known Issues](#known-issues)
+
+## Description
 
 This package provides pure javascript functions for classification of Number-arrays. 
 
@@ -56,14 +70,14 @@ typeof colors[classIdx(bounds, 0)] !== 'undefined' ? colors[classIdx(bounds, 0)]
 ```
 
 
-# docs
+## docs
 
 todo...
 
-# Inspiration
+## Inspiration
 
 Thanks to [simogeo/geostats](https://github.com/simogeo/geostats) for the algorithm implementations. I altered them to use newer javascript syntax and functionality. Also this package provides each algorithm as a pure function. These changes result in a smaller build and make tree-shaking possible.
 
-# Known Issues
+## Known Issues
 
 * Jenks is behaving strange when number of classes is smaller or equal to series.length.
