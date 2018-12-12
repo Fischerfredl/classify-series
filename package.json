@@ -26,6 +26,7 @@
     "url": "https://github.com/Fischerfredl/classify-series/issues"
   },
   "homepage": "https://github.com/Fischerfredl/classify-series#readme",
+  "sideEffects": false,
   "devDependencies": {
     "@babel/cli": "^7.1.5",
     "@babel/core": "^7.1.6",
