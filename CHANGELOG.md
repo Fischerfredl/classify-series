@@ -1,6 +1,9 @@
 # Changelog
 
-## [Unreleased]
+## Unreleased
+- Updated: dependencies
+
+## 0.1.2 - 2018-12-12
 - Added: LICENSE.txt
 - Added: CHANGELOG.md
 
