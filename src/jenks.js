@@ -8,8 +8,12 @@ export const classifyJenks = (serie, nbClass) => {
   // define two matrices mat1, mat2
   let height = serie.length + 1
   let width = nbClass + 1
-  let mat1 = Array(height).fill().map(() => Array(width).fill(0))
-  let mat2 = Array(height).fill().map(() => Array(width).fill(0))
+  let mat1 = Array(height)
+    .fill()
+    .map(() => Array(width).fill(0))
+  let mat2 = Array(height)
+    .fill()
+    .map(() => Array(width).fill(0))
 
   // initialize mat1, mat2
   for (let y = 1; y < nbClass + 1; y++) {
@@ -36,7 +40,7 @@ export const classifyJenks = (serie, nbClass) => {
       let i4 = i3 - 1
       if (i4 !== 0) {
         for (let p = 2; p < nbClass + 1; p++) {
-          if (mat2[l][p] >= (v + mat2[i4][p - 1])) {
+          if (mat2[l][p] >= v + mat2[i4][p - 1]) {
             mat1[l][p] = i3
             mat2[l][p] = v + mat2[i4][p - 1]
           }

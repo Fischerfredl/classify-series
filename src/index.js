@@ -12,11 +12,11 @@ import { classifyStdDeviation } from './stdDeviation.js'
 export const getRanges = (bounds, separator = ' - ', precicion = 2) => {
   let multiplier = Math.pow(10, precicion)
   let ranges = []
-  for (let i = 0; i < (bounds.length - 1); i++) {
+  for (let i = 0; i < bounds.length - 1; i++) {
     ranges.push(
       Math.round(bounds[i] * multiplier) / multiplier +
-      separator +
-      Math.round(bounds[i + 1] * multiplier) / multiplier
+        separator +
+        Math.round(bounds[i + 1] * multiplier) / multiplier
     )
   }
   return ranges

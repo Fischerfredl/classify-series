@@ -1,17 +1,17 @@
-const mean = (serie) => {
+const mean = serie => {
   let sum = serie.reduce((sum, val) => sum + val, 0)
   return sum / serie.length
 }
 
-const variance = (serie) => {
+const variance = serie => {
   let tmp = 0
   for (let i = 0; i < serie.length; i++) {
-    tmp += Math.pow((serie[i] - mean(serie)), 2)
+    tmp += Math.pow(serie[i] - mean(serie), 2)
   }
   return tmp / serie.length
 }
 
-const stddev = (serie) => {
+const stddev = serie => {
   return Math.sqrt(variance(serie))
 }
 
@@ -31,8 +31,8 @@ export const classifyStdDeviation = (serie, nbClass) => {
     let infBound = Math.floor(nbClass / 2)
     let supBound = infBound + 1
     // we set the central bounds
-    bounds[infBound] = _mean - (_stddev / 2)
-    bounds[supBound] = _mean + (_stddev / 2)
+    bounds[infBound] = _mean - _stddev / 2
+    bounds[supBound] = _mean + _stddev / 2
     // Values < to infBound, except first one
     for (let i = infBound - 1; i > 0; i--) {
       let val = bounds[i + 1] - _stddev
