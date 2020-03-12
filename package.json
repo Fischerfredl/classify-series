@@ -1,6 +1,6 @@
 {
   "name": "classify-series",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Classification algorithms for number-arrays.",
   "main": "dist/classify-series.cjs",
   "module": "src/index.js",
