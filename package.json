@@ -6,7 +6,8 @@
   "scripts": {
     "test": "BABEL_ENV=test mocha --require @babel/register --require @babel/core",
     "lint": "eslint src",
-    "build": "babel src -o dist/classify-series.min.js"
+    "format": "eslint src --fix",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -32,13 +33,14 @@
     "@babel/core": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
     "@babel/register": "^7.8.6",
-    "babel-preset-minify": "^0.4.3",
+    "babel-eslint": "^10.1.0",
     "eslint": "^5.16.0",
-    "eslint-config-standard": "^12.0.0",
+    "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-import": "^2.20.1",
-    "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "mocha": "^5.2.0"
+    "eslint-plugin-prettier": "^3.1.2",
+    "mocha": "^5.2.0",
+    "prettier": "^1.19.1",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
   }
 }
