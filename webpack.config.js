@@ -20,6 +20,9 @@ const clientConfig = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'classify-series.min.js',
     library: 'classifySeries'
+  },
+  module: {
+    rules: [{ test: /\.m?js/, use: require('babel-loader') }]
   }
 }
 
