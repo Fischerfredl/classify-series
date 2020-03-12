@@ -2,7 +2,8 @@
   "name": "classify-series",
   "version": "0.1.2",
   "description": "Classification algorithms for number-arrays.",
-  "main": "src/index.js",
+  "main": "dist/classify-series.cjs",
+  "module": "src/index.js",
   "scripts": {
     "test": "jest",
     "lint": "eslint src",

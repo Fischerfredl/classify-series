@@ -83,3 +83,5 @@ export {
   classifyQuantile,
   classifyStdDeviation
 }
+
+export default classify

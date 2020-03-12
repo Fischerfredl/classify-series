@@ -5,7 +5,8 @@ const serverConfig = {
   target: 'node',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js'
+    filename: 'classify-series.cjs',
+    libraryTarget: 'commonjs'
   },
   optimization: {
     minimize: false
@@ -17,7 +18,8 @@ const clientConfig = {
   target: 'web',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'main.es.js'
+    filename: 'classify-series.min.js',
+    library: 'classifySeries'
   }
 }
 
