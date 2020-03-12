@@ -5,8 +5,8 @@
   "main": "dist/classify-series.cjs",
   "module": "src/index.js",
   "scripts": {
-    "test": "jest",
-    "test-watch": "jest --watch",
+    "test": "jest --coverage",
+    "test-watch": "jest --watch --coverage",
     "lint": "eslint src",
     "format": "eslint src --fix",
     "build": "webpack"
