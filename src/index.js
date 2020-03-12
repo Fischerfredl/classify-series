@@ -10,8 +10,8 @@ import { classifyStdDeviation } from './stdDeviation.js'
  * @param {number} precicion
  */
 export const getRanges = (bounds, separator = ' - ', precicion = 2) => {
-  let multiplier = Math.pow(10, precicion)
-  let ranges = []
+  const multiplier = Math.pow(10, precicion)
+  const ranges = []
   for (let i = 0; i < bounds.length - 1; i++) {
     ranges.push(
       Math.round(bounds[i] * multiplier) / multiplier +

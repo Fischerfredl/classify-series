@@ -10,12 +10,12 @@ export const classifyEqInterval = (serie, nbClass, forceMin, forceMax) => {
     return []
   }
 
-  let tmpMin = typeof forceMin === 'undefined' ? Math.min(...serie) : forceMin
-  let tmpMax = typeof forceMax === 'undefined' ? Math.max(...serie) : forceMax
+  const tmpMin = typeof forceMin === 'undefined' ? Math.min(...serie) : forceMin
+  const tmpMax = typeof forceMax === 'undefined' ? Math.max(...serie) : forceMax
 
-  let bounds = []
+  const bounds = []
   let val = tmpMin
-  let interval = (tmpMax - tmpMin) / nbClass
+  const interval = (tmpMax - tmpMin) / nbClass
 
   for (let i = 0; i <= nbClass; i++) {
     bounds.push(val)
