@@ -1,9 +1,12 @@
 {
-  "extends": ["prettier"],
+  "extends": ["eslint:recommended", "prettier"],
   "plugins": ["prettier", "import"],
   "parser": "babel-eslint",
   "rules": {
     "prettier/prettier": "error",
-    "prefer-const": "error"
+    "no-var": "error"
+  },
+  "env": {
+    "jest": true
   }
 }

@@ -26,10 +26,10 @@ export const classifyJenks = (serie, nbClass) => {
 
   // fill matrices
   for (let l = 2; l < serie.length + 1; l++) {
-    const s1 = 0.0
-    const s2 = 0.0
-    const w = 0.0
-    const v = 0.0
+    let s1 = 0.0
+    let s2 = 0.0
+    let w = 0.0
+    let v = 0.0
     for (let m = 1; m < l + 1; m++) {
       const i3 = l - m + 1
       const val = parseFloat(serie[i3 - 1])
