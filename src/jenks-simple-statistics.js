@@ -1,40 +1,25 @@
 /**
  * Based on jenks implementation of simple-statistics
  * https://github.com/simple-statistics/simple-statistics
- * https://gist.githubusercontent.com/tmcw/4969184/raw/cfd9572d00db6bcdc34f07b088738fc3a47846b4/simple_statistics.js
+ * https://raw.githubusercontent.com/simple-statistics/simple-statistics/9ee01d5fc2e4f8f48b2897e48068a0d7945a1d7a/src/simple_statistics.js
  */
 export function classifyJenks(data, n_classes) {
-  if (data.length === 0) {
-    return []
-  }
+  if (n_classes > data.length) return []
 
-  // sort data in numerical order
+  // by the matrices function
   data = data.slice().sort((a, b) => a - b)
 
   // get our basic matrices
   let matrices = jenksMatrices(data, n_classes),
     // we only need lower class limits here
-    lower_class_limits = matrices.lower_class_limits,
-    k = data.length - 1,
-    kclass = [],
-    countNum = n_classes
+    lower_class_limits = matrices.lower_class_limits
 
-  // the calculation of classes will never include the upper and
-  // lower bounds, so we need to explicitly set them
-  kclass[n_classes] = data[data.length - 1]
-  kclass[0] = data[0]
-
-  // the lower_class_limits matrix is used as indexes into itself
-  // here: the `k` variable is reused in each iteration.
-  while (countNum > 1) {
-    kclass[countNum - 1] = data[lower_class_limits[k][countNum] - 2]
-    k = lower_class_limits[k][countNum] - 1
-    countNum--
-  }
-
-  return kclass
+  // extract n_classes out of the computed matrices
+  return jenksBreaks(data, lower_class_limits, n_classes)
 }
 
+// ## Compute Matrices for Jenks
+//
 // Compute the matrices required for Jenks breaks. These matrices
 // can be used for any classing of data with `classes <= n_classes`
 function jenksMatrices(data, n_classes) {
@@ -55,6 +40,9 @@ function jenksMatrices(data, n_classes) {
   for (i = 0; i < data.length + 1; i++) {
     let tmp1 = [],
       tmp2 = []
+    // despite these arrays having the same values, we need
+    // to keep them separate so that changing one does not change
+    // the other
     for (j = 0; j < n_classes + 1; j++) {
       tmp1.push(0)
       tmp2.push(0)
@@ -111,6 +99,10 @@ function jenksMatrices(data, n_classes) {
 
       if (i4 !== 0) {
         for (j = 2; j < n_classes + 1; j++) {
+          // if adding this element to an existing class
+          // will increase its variance beyond the limit, break
+          // the class at this point, setting the `lower_class_limit`
+          // at this point.
           if (
             variance_combinations[l][j] >=
             variance + variance_combinations[i4][j - 1]
@@ -127,8 +119,34 @@ function jenksMatrices(data, n_classes) {
     variance_combinations[l][1] = variance
   }
 
+  // return the two matrices. for just providing breaks, only
+  // `lower_class_limits` is needed, but variances can be useful to
+  // evaluate goodness of fit.
   return {
     lower_class_limits: lower_class_limits,
     variance_combinations: variance_combinations,
   }
+}
+// ## Pull Breaks Values for Jenks
+//
+// the second part of the jenks recipe: take the calculated matrices
+// and derive an array of n breaks.
+function jenksBreaks(data, lower_class_limits, n_classes) {
+  let k = data.length,
+    kclass = [],
+    countNum = n_classes
+
+  // the calculation of classes will never include the upper
+  // bound, so we need to explicitly set it
+  kclass[n_classes] = data[data.length - 1]
+
+  // the lower_class_limits matrix is used as indices into itself
+  // here: the `k` variable is reused in each iteration.
+  while (countNum > 0) {
+    kclass[countNum - 1] = data[lower_class_limits[k][countNum] - 1]
+    k = lower_class_limits[k][countNum] - 1
+    countNum--
+  }
+
+  return kclass
 }
