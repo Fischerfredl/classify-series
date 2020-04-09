@@ -16,12 +16,17 @@ describe('jenks - geostats', () => {
     const bounds = classifyJenks1([1], 2)
     expect(bounds).toEqual([1, 1, 1, 1])
   })
+
+  it('only one unique value', () => {
+    const bounds = classifyJenks1([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 5)
+    expect(bounds).toEqual([1, 1, 1, 1, 1, 1])
+  })
 })
 
 describe('jenks - simple-statistics', () => {
   it('happy path', () => {
     const bounds = classifyJenks2([1, 2, 3, 4], 2)
-    expect(bounds).toEqual([1, 1, 4])
+    expect(bounds).toEqual([1, 3, 4])
   })
 
   it('serie is empty', () => {
@@ -32,5 +37,9 @@ describe('jenks - simple-statistics', () => {
   it.skip('serie contains only one value', () => {
     const bounds = classifyJenks2([1], 2)
     expect(bounds).toEqual([1, 1, 1, 1])
+  })
+
+  it.skip('only one unique value', () => {
+    classifyJenks2([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1], 5)
   })
 })
