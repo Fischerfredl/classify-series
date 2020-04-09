@@ -2,6 +2,10 @@
 
 ## Unreleaded
 
+## 0.2.1 - 2020-04-09
+
+- Fixed jenks algorithm
+
 ## 0.2.0 - 2020-03-12
 
 - Updated: dependencies
