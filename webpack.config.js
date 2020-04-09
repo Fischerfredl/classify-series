@@ -6,11 +6,11 @@ const serverConfig = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'classify-series.cjs',
-    libraryTarget: 'commonjs'
+    libraryTarget: 'commonjs',
   },
   optimization: {
-    minimize: false
-  }
+    minimize: false,
+  },
 }
 
 const clientConfig = {
@@ -19,11 +19,11 @@ const clientConfig = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'classify-series.min.js',
-    library: 'classifySeries'
+    library: 'classifySeries',
   },
   module: {
-    rules: [{ test: /\.m?js/, use: require('babel-loader') }]
-  }
+    rules: [{ test: /\.m?js/, use: require('babel-loader') }],
+  },
 }
 
 module.exports = [serverConfig, clientConfig]

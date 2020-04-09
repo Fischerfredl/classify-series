@@ -7,6 +7,7 @@
     "no-var": "error"
   },
   "env": {
-    "jest": true
+    "jest": true,
+    "node": true
   }
 }
