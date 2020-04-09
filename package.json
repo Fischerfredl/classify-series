@@ -9,7 +9,8 @@
     "test-watch": "jest --watch --coverage",
     "lint": "eslint src",
     "format": "eslint src --fix",
-    "build": "webpack"
+    "build": "webpack",
+    "prepublishOnly": "npm run test && npm run build"
   },
   "repository": {
     "type": "git",
