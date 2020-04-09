@@ -1,3 +1,8 @@
+/**
+ * Based on jenks implementation of geostats
+ * https://github.com/simogeo/geostats
+ * https://raw.githubusercontent.com/simogeo/geostats/a5b2b89a7bef3c412468bb1062e3cf00ffdae0ea/lib/geostats.js
+ */
 export const classifyJenks = (serie, nbClass) => {
   if (serie.length === 0) {
     return []

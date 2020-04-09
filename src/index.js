@@ -1,5 +1,5 @@
 import { classifyEqInterval } from './equalInterval.js'
-import { classifyJenks } from './jenks.js'
+import { classifyJenks } from './jenks-simple-statistics.js'
 import { classifyQuantile } from './quantile.js'
 import { classifyStdDeviation } from './stdDeviation.js'
 import { classifyCkmeans } from './ckmeans.js'
@@ -85,7 +85,7 @@ export {
   classifyJenks,
   classifyQuantile,
   classifyStdDeviation,
-  classifyCkmeans
+  classifyCkmeans,
 }
 
 export default classify
