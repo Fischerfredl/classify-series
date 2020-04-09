@@ -81,7 +81,7 @@ export {
   classifyEqInterval,
   classifyJenks,
   classifyQuantile,
-  classifyStdDeviation
+  classifyStdDeviation,
 }
 
 export default classify

@@ -1,9 +1,9 @@
-const mean = serie => {
+const mean = (serie) => {
   const sum = serie.reduce((sum, val) => sum + val, 0)
   return sum / serie.length
 }
 
-const variance = serie => {
+const variance = (serie) => {
   let tmp = 0
   for (let i = 0; i < serie.length; i++) {
     tmp += Math.pow(serie[i] - mean(serie), 2)
@@ -11,7 +11,7 @@ const variance = serie => {
   return tmp / serie.length
 }
 
-const stddev = serie => {
+const stddev = (serie) => {
   return Math.sqrt(variance(serie))
 }
 
