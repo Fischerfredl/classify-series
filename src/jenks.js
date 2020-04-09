@@ -52,11 +52,14 @@ export const classifyJenks = (serie, nbClass) => {
   }
 
   const bounds = []
-  bounds.push(serie[0])
-  for (let i = 2; i <= nbClass; i++) {
-    const idx = mat1[serie.length][i] - 2
-    bounds.push(serie[idx])
-  }
   bounds.push(serie[serie.length - 1])
-  return bounds
+  let k = serie.length
+  for (let i = nbClass; i >= 2; i--) {
+    const idx = parseInt(mat1[k][i] - 2)
+    bounds.push(serie[idx])
+    k = parseInt(mat1[k][i] - 1)
+  }
+  bounds.push(serie[0])
+
+  return bounds.reverse()
 }
