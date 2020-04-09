@@ -1,6 +1,10 @@
 # Changelog
 
-## Unreleaded
+## Unreleased
+
+## 0.3.0 = 2020-04-09
+
+- Include ckmeans algorithm
 
 ## 0.2.2 - 2020-04-09
 
