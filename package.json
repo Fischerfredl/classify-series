@@ -31,6 +31,10 @@
   },
   "homepage": "https://github.com/Fischerfredl/classify-series#readme",
   "sideEffects": false,
+  "files": [
+    "/src",
+    "/dist"
+  ],
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
