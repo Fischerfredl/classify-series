@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+## 0.3.2 - 2020-04-09
+
+- Using geostats version again as default jenks algorithm. (simple-statistics had errors)
+
 ## 0.3.1 - 2020-04-09
 
 - Use simple-statistics implementation of jenks natural breaks.
