@@ -1,5 +1,5 @@
 import { classifyEqInterval } from './equalInterval.js'
-import { classifyJenks } from './jenks-simple-geostats.js'
+import { classifyJenks } from './jenks-geostats.js'
 import { classifyQuantile } from './quantile.js'
 import { classifyStdDeviation } from './stdDeviation.js'
 import { classifyCkmeans } from './ckmeans.js'
