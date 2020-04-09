@@ -2,6 +2,10 @@
 
 ## Unreleaded
 
+## 0.2.2 - 2020-04-09
+
+-Fix distributed package
+
 ## 0.2.1 - 2020-04-09
 
 - Fixed jenks algorithm
