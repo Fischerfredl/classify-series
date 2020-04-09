@@ -2,7 +2,11 @@
 
 ## Unreleased
 
-## 0.3.0 = 2020-04-09
+## 0.3.1 - 2020-04-09
+
+- Use simple-statistics implementation of jenks natural breaks.
+
+## 0.3.0 - 2020-04-09
 
 - Include ckmeans algorithm
 
