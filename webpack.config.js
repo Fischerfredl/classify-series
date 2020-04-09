@@ -22,7 +22,7 @@ const clientConfig = {
     library: 'classifySeries',
   },
   module: {
-    rules: [{ test: /\.m?js/, use: require('babel-loader') }],
+    rules: [{ test: /\.m?js/, use: 'babel-loader' }],
   },
 }
 
