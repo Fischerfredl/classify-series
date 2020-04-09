@@ -2,6 +2,7 @@ import { classifyEqInterval } from './equalInterval.js'
 import { classifyJenks } from './jenks.js'
 import { classifyQuantile } from './quantile.js'
 import { classifyStdDeviation } from './stdDeviation.js'
+import { classifyCkmeans } from './ckmeans.js'
 
 /**
  * Get a ranges array from a bounds array
@@ -56,7 +57,7 @@ export const getClass = (bounds, val, classes, oob) => {
 
 /**
  * Wrap up all classification algorithms in one function.
- * @param {('eqInterval'|'jenks'|'quantile'|'stdDev')} algorithm
+ * @param {('eqInterval'|'jenks'|'quantile'|'stdDev'|'ckmeans')} algorithm
  * @param {array} serie
  * @param {number} nbClass
  */
@@ -70,6 +71,8 @@ export const classify = (algorithm, serie, nbClass) => {
       return classifyQuantile(serie, nbClass)
     case 'stdDev':
       return classifyStdDeviation(serie, nbClass)
+    case 'ckmeans':
+      return classifyCkmeans(serie, nbClass)
     default:
       throw Error(
         'Can not classify series. Algorithm "' + algorithm + '" not known'
@@ -82,6 +85,7 @@ export {
   classifyJenks,
   classifyQuantile,
   classifyStdDeviation,
+  classifyCkmeans
 }
 
 export default classify
