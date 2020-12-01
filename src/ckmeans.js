@@ -1,5 +1,5 @@
-const numericSort = arr => arr.slice().sort((a, b) => a - b)
-const uniqueCountSorted = arr => new Set(arr).size
+const numericSort = (arr) => arr.slice().sort((a, b) => a - b)
+const uniqueCountSorted = (arr) => new Set(arr).size
 
 /**
  * Based on https://github.com/simple-statistics/simple-statistics/blob/master/src/ckmeans.js
